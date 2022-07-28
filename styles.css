@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-color: rgb(87, 122, 71);
+}
+header h1{
+    text-align: center;
+    color: white;
+}
+body{
+    background-color: rgb(27, 27, 37);
+}
+main #text{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    color: white;
+    line-height: 25px;
+}
+span{
+    color: rgb(87, 122, 71);
+    font-weight: bold;
+}
+main #text a{
+    text-decoration: none;
+    color: rgb(87, 122, 71);
+
+}
+main #text a:hover{
+    color: rgb(135, 185, 112);
+    
+}
+#carousel{
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    background-color: aliceblue;
+    width: 50%;
+    border-radius: 10px;
+}
+#carousel img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+#carousel h2{
+    padding-top: 10px;
+    text-align: center;
+}
+#carousel #task{
+    color: rgb(87, 122, 71);
+    text-align: center;            
+}
+#carousel #description{
+    color: black;
+    margin: 0 auto;
+    width: 95%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align:center;
+    font-size: 14px;
+}
+.buttons{
+    margin: 0 auto;
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+.buttons button{
+
+    background-color: aliceblue;
+    border: none;
+    color: rgb(27,27,37);
+    font-size: 25px;
+    cursor: pointer;
+    text-align: center;
+}

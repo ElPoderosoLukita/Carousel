@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Reviews Students</h1>
+        </header>
+        <main>
+            <div id="text"> 
+            <p>Nosotros nos encargamos de publicar las últimas reviews del foro estudiantil, estos estudiantes están acá con su propia autorización de su imágen y datos, si usted tiene una duda sobre la legitimidad de los datos o derechos de autor, no dudes consultarnos en <a href="#">loremipsum@gmail.com</a><br><br>
+            <span>Reviews Students</span> es una plataforma para que la gente entre y pueda ver como les va a nuestros estudiantes, su opiniones acerca de nuestra manera de estudiar y quienes son, como contactarlos en caso de que quieran comunicarse con ellos, todo esto para que nuestros estudiantes tengan algunas oportunidades de trabajo, mejores oportunidades de estudios, entre otras cosas.
+            </p>
+            </div>
+
+            <div id="carousel">
+                <img :src="src" alt="">
+                <h2>{{ title }}</h2>
+                <p id="task">{{ task }}</p>
+
+                <div id="description">
+                <p>{{text}}</p>
+                </div>
+
+                <div class="buttons">
+                    <button @click="goDown"><</button>
+                    <button @click="goOn">></button>
+                </div>
+            </div>
+        </main>    
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    value:0,
+
+                    src1:"./assets/persona1.jpg",
+                    title1:"Martha",
+                    task1:"Web developer",
+                    text1:"Martha estudia en Reviews Students hace aproximadamente 5 años, ella es especializada en HTML, CSS, JavaScript y VueJS. Es una muy buena alumna, es capaz de muchas cosas.",
+
+                    src2:"./assets/persona2.jpg",
+                    title2:"María",
+                    task2:"UI Designer",
+                    text2:"María estudia en Reviews Students hace aproximadamente 1 año y medio, ella está aprendiendo a desarrollar interfaces gráficas de usuario, ella todavía sigue estudiando aquí, pero es muy buena diseñando y aprendió mucho en muy poco tiempo.",
+
+
+                    src3:"./assets/persona3.jpg",
+                    title3:"Mario",
+                    task3:"Database Administrator",
+                    text3:"Mario estudia en Reviews Students hace aproximadamente 6 años, fue uno de nuestros primeros estudiantes, ya está trabajando en una empresa de gran nombre como Database Administrator, su gran capacidad de abstraer los casos de la vida real y mostrarlos en código en SQL es impresionante.",
+
+                    src4:"./assets/persona4.jpg",
+                    title4:"Lucía",
+                    task4:"Backend Developer",
+                    text4:"Lucía estudia en Reviews Students hace aproximadamente 4 meses, está estudiando GO junto a MySQL para poder desarollar Backend de aplicaciones y páginas webs, le falta mucho para aprender, pero es una muy buena alumna.",
+
+                };
+            },
+            computed:{
+                src(){
+                    const src = this.src1;
+                    return src;
+                },
+                title(){
+                    const title = this.title1;
+                    return title;
+                },
+                task(){
+                    const task = this.task1;
+                    return task;
+                },
+                text(){
+                    const text = this.text1;
+                    return text;
+                },
+            },
+            methods:{
+                goOn(){
+                    if(this.value == 3){
+                        this.value=0;
+                    }
+                    else {
+                        this.value ++;
+                    }
+
+                    if(this.value == 1){
+                        this.src1 = this.src2;
+                        this.title1 = this.title2;
+                        this.task1 = this.task2;
+                        this.text1 = this.text2;
+                    } else if(this.value == 2){
+                        this.src1 = this.src3
+                        this.title1 = this.title3;
+                        this.task1 = this.task3;
+                        this.text1 = this.text3;
+                    } else if(this.value == 3){
+                        this.src1 = this.src4
+                        this.title1 = this.title4;
+                        this.task1 = this.task4;
+                        this.text1 = this.text4;
+                    } else if(this.value == 0){
+                        this.src1="./assets/persona1.jpg"
+                        this.title1="Martha"
+                        this.task1="Web developer"
+                        this.text1="Martha estudia en Reviews Students hace aproximadamente 5 años, ella es especializada en HTML, CSS, this.JavaScript y VueJS. Es una muy buena alumna, es capaz de muchas cosas."
+                    }
+
+                    console.log(this.value);
+                },
+                goDown(){
+                    if(this.value == 0){
+                        this.value=3;
+                    }
+                    else {
+                        this.value --;
+                    }
+
+                    if(this.value == 3){
+                        this.src1 = this.src4;
+                        this.title1 = this.title4;
+                        this.task1 = this.task4;
+                        this.text1 = this.text4;
+                    } else if(this.value == 2){
+                        this.src1 = this.src3
+                        this.title1 = this.title3;
+                        this.task1 = this.task3;
+                        this.text1 = this.text3;
+                    } else if(this.value == 1){
+                        this.src1 = this.src2
+                        this.title1 = this.title2;
+                        this.task1 = this.task2;
+                        this.text1 = this.text2;
+                    } else if(this.value == 0){
+                        this.src1="./assets/persona1.jpg"
+                        this.title1="Martha"
+                        this.task1="Web developer"
+                        this.text1="Martha estudia en Reviews Students hace aproximadamente 5 años, ella es especializada en HTML, CSS, this.JavaScript y VueJS. Es una muy buena alumna, es capaz de muchas cosas."
+                    }
+                }
+            }
+        });
+
+        const vm = app.mount("#app");
+    </script>
+</body>
+</html>
